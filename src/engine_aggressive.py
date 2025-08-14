@@ -32,7 +32,7 @@ print("="*60)
 
 # Training the isolation forest model with BETTER contamination parameter
 # Use 0.01 instead of 0.0018 based on test results
-clf = train_IF(X, contamination=0.03)
+clf = train_IF(X, contamination=0.1)
 print("Isolation forest model trained successfully")
 
 # After training IF model
@@ -54,9 +54,7 @@ print("\n" + "="*60)
 print("TRAINING IMPROVED LOF MODEL")
 print("="*60)
 
-lof = train_lof(X, contamination=0.03, n_neighbors=50) # contamination=0.03 : balanced approach
-# lof = train_lof(X, contamination=0.02, n_neighbors=50) # contamination=0.02 : fewer false alarms
-# lof = train_lof(X, contamination=0.1, n_neighbors=50) # contamination=0.1 : maximum fraud detection
+lof = train_lof(X, contamination=0.1, n_neighbors=50) # contamination=0.1 : maximum fraud detection
 
 print("LOF model trained successfully")
 
